@@ -7,10 +7,10 @@ In order to kickstart your Sphinx documentation, please do the following:
 If you haven't done so already, create a virtual environment for this reusable
 app like so:
 
-    mkvirtualenv -p python2.7 valuehorizon-forex
+    mkvirtualenv -p python2.7 valuehorizon-countries
     pip install Sphinx
     deactivate
-    workon valuehorizon-forex
+    workon valuehorizon-countries
     sphinx-quickstart
 
 Answer the questions:
@@ -18,7 +18,7 @@ Answer the questions:
     > Root path for the documentation [.]:
     > Separate source and build directories (y/N) [n]: y
     > Name prefix for templates and static dir [_]:
-    > Project name: Valuehorizon Forex
+    > Project name: Valuehorizon Countries
     > Author name(s): Quincy Alexander
     > Project version: 0.1
     > Project release [0.1]:

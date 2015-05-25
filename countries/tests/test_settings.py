@@ -19,7 +19,7 @@ DATABASES = {
     }
 }
 
-ROOT_URLCONF = 'forex.tests.urls'
+ROOT_URLCONF = 'countries.tests.urls'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(APP_ROOT, '../app_static')
@@ -46,7 +46,7 @@ EXTERNAL_APPS = [
 ]
 
 INTERNAL_APPS = [
-    'forex',
+    'countries',
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS

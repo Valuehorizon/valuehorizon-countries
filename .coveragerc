@@ -1,9 +1,9 @@
 [run]
-source = forex
+source = countries
 branch = 0
 omit =
-    forex/migrations/*
-    forex/tests/*
+    countries/migrations/*
+    countries/tests/*
 
 [report]
 exclude_lines =
