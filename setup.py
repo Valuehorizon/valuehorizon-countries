@@ -29,7 +29,7 @@ http://docs.python.org/2/distutils/sourcedist.html
 """
 import os
 from setuptools import setup, find_packages
-import forex as app
+import countries as app
 
 
 dev_requires = [

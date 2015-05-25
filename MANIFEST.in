@@ -4,7 +4,7 @@ include DESCRIPTION
 include CHANGELOG.txt
 include README.md
 include tox.ini
-graft forex
+graft countries
 global-exclude *.orig *.pyc *.log *.swp local_settings.py
-prune forex/tests/coverage
-prune forex/.ropeproject
+prune countries/tests/coverage
+prune countries/.ropeproject
