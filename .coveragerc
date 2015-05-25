@@ -1,0 +1,15 @@
+[run]
+source = forex
+branch = 0
+omit =
+    forex/migrations/*
+    forex/tests/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __unicode__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
