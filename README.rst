@@ -2,16 +2,7 @@
 Countries, by Valuehorizon
 ==============
 
-.. image:: https://travis-ci.org/Valuehorizon/valuehorizon-forex.svg?branch=master
-   :target: https://travis-ci.org/Valuehorizon/valuehorizon-forex
-.. image:: https://coveralls.io/repos/Valuehorizon/valuehorizon-forex/badge.svg
-   :target: https://coveralls.io/r/Valuehorizon/valuehorizon-forex
-.. image:: https://codeclimate.com/github/Valuehorizon/valuehorizon-forex/badges/gpa.svg
-   :target: https://codeclimate.com/github/Valuehorizon/valuehorizon-forex
-
-A Django-based Foreign Exchange data toolkit. It provides time-series functionality
-with built-in statistical plugins such as volatility and returns. You can also write 
-your own statistical plugins.
+A Django-based Countries data toolkit. 
 It also includes documentation, test coverage and a good amount of sample data to play around with.
 This app is a part of the Valuehorizon application ecosystem.
 
