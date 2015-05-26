@@ -10,17 +10,11 @@ class Country(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
     
-    # The name of the country after the word "in". For example, 
-    # the "the" in "the United States of America"
-    in_name = models.CharField(max_length=255, 
-                               help_text="The name of the country after the word 'in'.")
-    
-    currency = models.ManyToManyField(Currency, 
-                                      help_text="""Currencies for this country.
-                                      More than one currency is possible""")
-    symbol = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", 
-                              max_length=3, 
-                              unique=True)
+    # The name of the country after the word "in".
+    # For example, the "the" in "the United States of America"
+    in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Usefule for Autogeneration.")
+    currency = models.ManyToManyField(Currency, help_text="Official currencies for this country. More than one currency is possible")
+    symbol = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", max_length=3, unique=True)
 
     class Meta:
         verbose_name_plural = 'Countries'
@@ -33,10 +27,10 @@ class Country(models.Model):
 
 class Region(models.Model):
     """
-    Represents a region, such as the Caribbean, or Europe.
+    Represents a region, such as the Latin America, or Europe.
     """
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     country = models.ManyToManyField(Country)
     symbol = models.CharField(max_length=4)
 
@@ -65,9 +59,7 @@ class City(models.Model):
         unique_together = (("name", "country"), )
 
     def __unicode__(self):
-        return u'%s %s %s' % (unicode(self.name),
-                              unicode(',  '),
-                              unicode(self.country.name))
+        return u'%s, %s' % (unicode(self.name), unicode(self.country.name))
 
 
 class Government(models.Model):
