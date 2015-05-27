@@ -2,6 +2,13 @@
 Countries, by Valuehorizon
 ==============
 
+.. image:: https://travis-ci.org/Valuehorizon/valuehorizon-countries.svg?branch=master
+   :target: https://travis-ci.org/Valuehorizon/valuehorizon-countries
+.. image:: https://coveralls.io/repos/Valuehorizon/valuehorizon-countries/badge.svg
+   :target: https://coveralls.io/r/Valuehorizon/valuehorizon-countries
+.. image:: https://codeclimate.com/github/Valuehorizon/valuehorizon-countries/badges/gpa.svg
+   :target: https://codeclimate.com/github/Valuehorizon/valuehorizon-countries
+
 A Django-based Countries data toolkit. 
 It also includes documentation, test coverage and the official ISO-3166 seed data
 for all current (and former) countries.
