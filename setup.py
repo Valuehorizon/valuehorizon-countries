@@ -31,7 +31,7 @@ dev_requires = [
 ]
 
 install_requires = [
-    'django',
+    'valuehorizon-forex',
 ]
 
 
@@ -48,7 +48,7 @@ setup(
     long_description=read('README.rst'),
     license='The MIT License',
     platforms=['OS Independent'],
-    keywords='django, app, reusable, countries, valuehorizon',
+    keywords='django, app, reusable, countries, regions, cities, ISO-3166, valuehorizon',
     author='Quincy Alexander',
     author_email='qalexander@valuehorizon.com',
     url="https://https://github.com/Valuehorizon/valuehorizon-countries",

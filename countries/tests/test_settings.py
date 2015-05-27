@@ -46,6 +46,7 @@ EXTERNAL_APPS = [
 ]
 
 INTERNAL_APPS = [
+    'forex',
     'countries',
 ]
 
