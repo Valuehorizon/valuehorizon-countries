@@ -8,13 +8,22 @@ class Country(models.Model):
     Represents a country, such as the US, or Mexico.
     """
 
-    name = models.CharField(max_length=255, unique=True)
-    
-    # The name of the country after the word "in".
-    # For example, the "the" in "the United States of America"
-    in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Usefule for Autogeneration.")
+    name = models.CharField(max_length=255, unique=True, help_text="Official Country name")
+    common_name = models.CharField(max_length=255, blank=True, null=True, help_text="Common Country name")
+    in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Useful for Autogeneration.")
     currency = models.ManyToManyField(Currency, help_text="Official currencies for this country. More than one currency is possible")
-    symbol = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", max_length=3, unique=True)
+    symbol_alpha2_code = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", max_length=2, unique=True)
+    symbol_alpha3_code = models.CharField(help_text="ISO 3166-1 alpha-3 symbol", max_length=3, blank=True, null=True)
+    
+    ISO_STATUS_CHOICES = (
+        (u'EXR', u'Exceptionally reserved'),
+        (u'FRU', u'Formerly used'),
+        (u'INR', u'Indeterminately reserved'),
+        (u'OFF', u'Officially assigned'),
+        (u'TRR', u'Transitionally reserved'),
+        (u'UND', u'Unassigned'),
+    )
+    iso_status = models.CharField(max_length = 3, choices = ISO_STATUS_CHOICES, default="UND")    
 
     class Meta:
         verbose_name_plural = 'Countries'

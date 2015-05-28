@@ -14,10 +14,20 @@ It also includes documentation, test coverage and the official ISO-3166 seed dat
 for all current (and former) countries.
 This app is a part of the Valuehorizon application ecosystem.
 
-Note: this app is not a fork of the excellent django-countries_ app. The aim of
+Why a new Countries app?
+============
+
+This app is not a fork of the excellent django-countries_ app. The aim of
 valuehorizon-countries is to provide similar functionality but to actually include a Country model. 
-From an architectural point-of-view, we prefer this method as we can make ORM queries.
-Also, the data is part of the database, and is not hard-coded in our source-code.
+From an architectural point-of-view, we prefer this method for the following reasons:
+
+- Country data are constantly evolving. ISO-3166 aims to keep track of all recognized countries and their current status.
+  For example, in 1991, the country known as Yugoslavia split into several states. We want to be able to keep a "Yugoslavia" object,
+  but set its status to something "non-current".
+- We want to make ORM queries on that data; and
+- We want the data to be part of the database, and not hard-coded in our source-code.
+
+Again, this app is not meant to replace django-countries_, but simply to provide similar functionality via Django models and not a field.
 
 .. _django-countries: https://github.com/SmileyChris/django-countries
 
