@@ -1,10 +1,8 @@
 include AUTHORS
-include LICENSE
 include DESCRIPTION
-include CHANGELOG.txt
-include README.md
-include tox.ini
-graft countries
-global-exclude *.orig *.pyc *.log *.swp local_settings.py
-prune countries/tests/coverage
-prune countries/.ropeproject
+include LICENSE
+include *.py
+include *.txt
+include .coveragerc
+include Makefile
+recursive-include docs *.md
