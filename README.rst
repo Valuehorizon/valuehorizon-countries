@@ -15,7 +15,7 @@ for all current (and former) countries.
 This app is a part of the Valuehorizon application ecosystem.
 
 Why a new Countries app?
-============
+=========================
 
 This app is not a fork of the excellent django-countries_ app. The aim of
 valuehorizon-countries is to provide similar functionality but to actually include a Country model. 
