@@ -33,7 +33,7 @@ setup(
     keywords='django, app, reusable, countries, regions, cities, ISO-3166, valuehorizon',
     author='Quincy Alexander',
     author_email='qalexander@valuehorizon.com',
-    url="https://https://github.com/Valuehorizon/valuehorizon-countries",
+    url="https://github.com/Valuehorizon/valuehorizon-countries",
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
