@@ -1,6 +1,6 @@
-==============
+===========================
 Countries, by Valuehorizon
-==============
+===========================
 
 .. image:: https://travis-ci.org/Valuehorizon/valuehorizon-countries.svg?branch=master
    :target: https://travis-ci.org/Valuehorizon/valuehorizon-countries
