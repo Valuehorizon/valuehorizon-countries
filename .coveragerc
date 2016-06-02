@@ -4,6 +4,7 @@ branch = 0
 omit =
     countries/migrations/*
     countries/tests/*
+    countries/settings/*
 
 [report]
 exclude_lines =
