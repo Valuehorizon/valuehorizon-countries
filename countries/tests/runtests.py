@@ -12,7 +12,7 @@ from django.conf import settings
 from django_nose import NoseTestSuiteRunner
 import sys
 import coverage
-import forex.settings.test_settings as test_settings
+import countries.settings.test_settings as test_settings
 
 if not settings.configured:
     settings.configure(**test_settings.__dict__)
