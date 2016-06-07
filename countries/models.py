@@ -7,10 +7,10 @@ class Country(models.Model):
     Represents a country, such as the US, or Mexico.
     """
 
-    name = models.CharField(max_length=255, unique=True, help_text="Official Country name (ISO Full name)")
+    name = models.CharField(max_length=255, blank=True, null=True, help_text="Official Country name (ISO Full name)")
     currency = models.ManyToManyField(Currency, help_text="Official currencies for this country. More than one currency is possible")
     symbol_alpha2_code = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", max_length=2, unique=True)
-    symbol_alpha3_code = models.CharField(help_text="ISO 3166-1 alpha-3 symbol", max_length=3, blank=True, null=True)
+    symbol_alpha3_code = models.CharField(help_text="ISO 3166-1 alpha-3 symbol", max_length=3, unique=True)
     is_independent = models.BooleanField()
     numeric_code = models.PositiveSmallIntegerField()
     remark_1 = models.TextField(blank=True)
@@ -29,7 +29,7 @@ class Country(models.Model):
     iso_status = models.CharField(max_length=3, choices=ISO_STATUS_CHOICES, default="UND")
 
     #  Additional helpful fields
-    common_name = models.CharField(max_length=255, blank=True, null=True, help_text="Common Country name")
+    common_name = models.CharField(max_length=255, unique=True, help_text="Common Country name")
     in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Useful for Autogeneration.")
 
     class Meta:
@@ -38,7 +38,7 @@ class Country(models.Model):
         ordering = ['name', ]
 
     def __unicode__(self):
-        return u'%s' % (unicode(self.name),)
+        return u'%s' % (unicode(self.common_name))
 
 
 class Region(models.Model):
@@ -95,3 +95,4 @@ class Government(models.Model):
 
     def __unicode__(self):
         return u'%s' % (unicode(self.name))
+
