@@ -1,6 +1,5 @@
 from django.db import models
 from forex.models import Currency
-from django.db.models import Count
 
 
 class Country(models.Model):
@@ -8,13 +7,17 @@ class Country(models.Model):
     Represents a country, such as the US, or Mexico.
     """
 
-    name = models.CharField(max_length=255, unique=True, help_text="Official Country name")
-    common_name = models.CharField(max_length=255, blank=True, null=True, help_text="Common Country name")
-    in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Useful for Autogeneration.")
+    name = models.CharField(max_length=255, unique=True, help_text="Official Country name (ISO Full name)")
     currency = models.ManyToManyField(Currency, help_text="Official currencies for this country. More than one currency is possible")
     symbol_alpha2_code = models.CharField(help_text="ISO 3166-1 alpha-2 symbol", max_length=2, unique=True)
     symbol_alpha3_code = models.CharField(help_text="ISO 3166-1 alpha-3 symbol", max_length=3, blank=True, null=True)
-    
+    is_independent = models.BooleanField()
+    numeric_code = models.PositiveSmallIntegerField()
+    remark_1 = models.TextField(blank=True)
+    remark_2 = models.TextField(blank=True)
+    remark_3 = models.TextField(blank=True)
+    territory_name = models.TextField(blank=True)
+
     ISO_STATUS_CHOICES = (
         (u'EXR', u'Exceptionally reserved'),
         (u'FRU', u'Formerly used'),
@@ -23,7 +26,11 @@ class Country(models.Model):
         (u'TRR', u'Transitionally reserved'),
         (u'UND', u'Unassigned'),
     )
-    iso_status = models.CharField(max_length = 3, choices = ISO_STATUS_CHOICES, default="UND")    
+    iso_status = models.CharField(max_length=3, choices=ISO_STATUS_CHOICES, default="UND")
+
+    #  Additional helpful fields
+    common_name = models.CharField(max_length=255, blank=True, null=True, help_text="Common Country name")
+    in_name = models.CharField(max_length=255, help_text="The name of the country after the word 'in'. Useful for Autogeneration.")
 
     class Meta:
         verbose_name_plural = 'Countries'
@@ -57,7 +64,7 @@ class City(models.Model):
     Represents a city within a country
     """
 
-    name = models.CharField(max_length=255)    
+    name = models.CharField(max_length=255)
     symbol = models.CharField(max_length=255, blank=True)
     country = models.ForeignKey(Country)
 
@@ -88,5 +95,3 @@ class Government(models.Model):
 
     def __unicode__(self):
         return u'%s' % (unicode(self.name))
-    
-    
