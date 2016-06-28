@@ -11,7 +11,7 @@ def load_countries():
         # Getting raw data from csv
         code2 = df.ix[indexvalue]["Alpha-2 code"]
         code3 = df.ix[indexvalue]["Alpha-3 code"]
-        full_name = df.ix[indexvalue]["Full name"]
+        full_name = df.ix[indexvalue]["Short name lower case"]
         if full_name == "":
             full_name = None
         num_code = df.ix[indexvalue]["Numeric code"]
